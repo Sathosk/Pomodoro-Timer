@@ -51,9 +51,7 @@ export function Home() {
                         <NewCycleForm />
                     </FormProvider>
                     <Countdown />
-                
-
-
+        
                 {activeCycle ? (
                     <StopCountdownButton onClick={interruptCurrentCycle} type="button">
                         <HandPalm size={24} />

@@ -15,18 +15,18 @@ export function NewCycleForm() {
             <label htmlFor="task">I will work on</label>
             <TaskInput
                 id="task"
-                list="taskSuggestions"
+                // list="taskSuggestions"
                 placeholder="Name your project"
                 {...register('task')}
                 disabled={!!activeCycle}
             />
 
-            <datalist id="taskSuggestions">
+            {/* <datalist id="taskSuggestions">
                 <option value="Projeto 1" />
                 <option value="Projeto 2" />
                 <option value="Projeto 3" />
                 <option value="Projeto 4" />
-            </datalist>
+            </datalist> */}
 
             <label htmlFor="minutesAmount">for</label>
             <MinutesAmountInput
@@ -35,7 +35,7 @@ export function NewCycleForm() {
                 placeholder='00'
                 required
                 step={5}
-                min={1}
+                min={5}
                 max={60}
                 {...register('minutesAmount', { valueAsNumber: true })}
                 disabled={!!activeCycle}
