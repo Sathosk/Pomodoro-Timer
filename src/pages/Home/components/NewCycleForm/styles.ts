@@ -4,12 +4,24 @@ export const FormContainer = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 0.5rem;
     color: ${props => props.theme['gray-100']};
     font-size: 1.125rem;
     font-weight: bold;
     flex-wrap: wrap;
+
+    @media (max-width: 640px) {
+        width: 671px;
+        flex-direction: column;
+        align-items: left;
+    }
+
+    div:first-child {
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
 `;
 
 const BaseInput = styled.input`

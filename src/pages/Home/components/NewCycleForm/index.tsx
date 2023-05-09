@@ -12,14 +12,18 @@ export function NewCycleForm() {
 
     return (
         <FormContainer>
-            <label htmlFor="task">I will work on</label>
-            <TaskInput
-                id="task"
-                // list="taskSuggestions"
-                placeholder="Name your project"
-                {...register('task')}
-                disabled={!!activeCycle}
-            />
+            <div>
+                <label htmlFor="task">I will work on</label>
+                <TaskInput
+                    id="task"
+                    // list="taskSuggestions"
+                    placeholder="Name your project"
+                    {...register('task')}
+                    disabled={!!activeCycle}
+                />
+            </div>
+
+            
 
             {/* <datalist id="taskSuggestions">
                 <option value="Projeto 1" />
@@ -27,21 +31,22 @@ export function NewCycleForm() {
                 <option value="Projeto 3" />
                 <option value="Projeto 4" />
             </datalist> */}
+            <div>
+                <label htmlFor="minutesAmount">for</label>
+                <MinutesAmountInput
+                    type="number"
+                    id="minutesAmount"
+                    placeholder='00'
+                    required
+                    step={5}
+                    min={5}
+                    max={60}
+                    {...register('minutesAmount', { valueAsNumber: true })}
+                    disabled={!!activeCycle}
+                />
 
-            <label htmlFor="minutesAmount">for</label>
-            <MinutesAmountInput
-                type="number"
-                id="minutesAmount"
-                placeholder='00'
-                required
-                step={5}
-                min={5}
-                max={60}
-                {...register('minutesAmount', { valueAsNumber: true })}
-                disabled={!!activeCycle}
-            />
-
-            <span>minutes.</span>
+                <span>minutes.</span>
+            </div>
         </FormContainer>
     )
 }
